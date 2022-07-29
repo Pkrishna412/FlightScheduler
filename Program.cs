@@ -14,8 +14,9 @@ class program
     {
         List<Order> orders = new List<Order>();
         List<Flight> flightSchedule;
-        string fileName = "coding-assigment-orders.json";
-        orders = LoadOrders(fileName);
+        string fileName = "coding-assigment-orders.json"; 
+        var relativePath = Path.Combine(".", "C:\\Users\\Pavan\\source\\repos\\FlightScheduler", fileName);
+        orders = LoadOrders(relativePath);
         Flights flight = new Flights(orders);
         flightSchedule = flight.GetFlightSchedule();
 
